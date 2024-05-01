@@ -31,3 +31,5 @@ Route::post('/logout', [UserController::class, "logout"])->middleware('auth');
 Route::get('/create-post',[PostController::class,'create'])->middleware('mustbeloggedin');
 Route::post('/create-post',[PostController::class,'store'])->middleware('auth');
 Route::get('/post/{post}',[PostController::class,'show'])->middleware('auth');
+
+Route::get("/profile/{pizza:username}", [UserController::class, 'profile']);

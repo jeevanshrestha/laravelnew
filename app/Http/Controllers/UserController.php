@@ -58,4 +58,9 @@ class UserController extends Controller
         Session::flash('alert-class', 'alert-info');
         return  redirect("/")  ;
     }
+
+    public function profile(User $user)
+    {
+        return view('profile-posts', ["username"=>$user->username]);
+    }
 }
